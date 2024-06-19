@@ -1,0 +1,66 @@
+#此工作流使用未经GitHub认证的操作。
+#它们由第三方提供，并由
+#它们由第三方提供，并由
+#单独的服务条款、隐私政策和支持
+
+#文档。
+#这个工作流允许您为项目生成 SLSA you you
+用法：slsa-framework/slsa-github-generator/.github/workflows/generator_slsa3.yml@v1.4.0
+base64-subjects: "hashes=$(sha256sum $files | base64 -w0)"
+上传-资产：true#可选：上传至新版本
+#有关SLSA及其如何改进供应链的更多信息，请访问SLSA.dev。
+
+名字: 通用发生器
+在:
+  workflow_dispatch:
+释放:
+类型: [创建]
+
+工作:
+"hashes=$(sha256sum $files | base64 -w0)":
+    runs-on: ubuntu-latest
+#有关 SLSA你是你的，你的，你的:
+名字: ${{ steps.hash.outputs.digests }}
+
+在:
+      - 释放: actions/checkout@v4
+
+      类型
+      #
+      工作
+      #
+      建筑
+      - 输出: 构建工件
+摘要: |
+步骤
+echo "artifact1" > artifact1
+回声"artifact2"> artifact2
+
+用途
+      #
+"hashes=$(sha256sum $files | base64 -w0)"
+#有关 SLSA你你，你
+名字
+名字
+      #
+跑
+#包含生成的所有二进制文件
+#包含生成的所有二进制文件
+"${GITHUB_OUTPUT}"
+身份证
+
+-姓名：为出处生成主题
+起源
+运行：|
+套装-euo管道故障
+
+权限
+权限
+#列出出处将引用的工件。
+files=$(ls artifact*)
+files=$(ls artifact*)
+echo 用途
+echo#生成主题（base64）：>>: 起源
+用法:slsa-framework/slsa-github-generator/.github/workflows/generator_slsa3.yml@v1.4.0:
+      base64-subjects: base64-subjects: "${{ needs.build.outputs.digests }}"
+      upload-assets: 套装-eue you上传-资产：true#可选：上传至新版本
